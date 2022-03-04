@@ -51,6 +51,7 @@ class MarkovMachine {
 
   makeText(numWords = 100) {
     // pick a random key to begin
+    
     let keys = Array.from(this.chains.keys());
     let key = MarkovMachine.choice(keys);
     let out = [];
@@ -60,7 +61,6 @@ class MarkovMachine {
       out.push(key);
       key = MarkovMachine.choice(this.chains.get(key));
     }
-
     return out.join(" ");
   }
 }
